@@ -69,6 +69,7 @@ This document lists all environment variables that can be configured for Present
 
 ```yaml
 version: '3.8'
+
 services:
   presenton:
     build: .
@@ -78,24 +79,26 @@ services:
       - ./app_data:/app_data
     environment:
       # Core Configuration
-      - CAN_CHANGE_KEYS=false
-      - DATABASE_URL=sqlite:///app_data/presenton.db
+      CAN_CHANGE_KEYS: false
+      DATABASE_URL: sqlite:///app_data/presenton.db
       
       # LLM Configuration (choose one)
-      - LLM=ollama
-      - OLLAMA_MODEL=llama3.1
-      - OLLAMA_URL=http://localhost:11434
+      LLM: ollama
+      OLLAMA_MODEL: llama3.1
+      OLLAMA_URL: http://localhost:11434
       
       # Template Generation
-      - TEMPLATE_LLM_PROVIDER=local
+      TEMPLATE_LLM_PROVIDER: local
       
       # Image Generation
-      - IMAGE_PROVIDER=dall-e-3
+      IMAGE_PROVIDER: dall-e-3
       
       # Advanced Options
-      - WEB_GROUNDING=false
-      - DISABLE_ANONYMOUS_TRACKING=true
+      WEB_GROUNDING: false
+      DISABLE_ANONYMOUS_TRACKING: true
 ```
+
+> **Note**: The project includes both `docker-compose.yml` (legacy format) and `docker-compose.yaml` (modern format) files. Use `docker-compose.yaml` for new deployments.
 
 ## Example Coolify Environment Variables
 

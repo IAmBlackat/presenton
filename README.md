@@ -106,6 +106,8 @@ You may want to directly provide your API KEYS as environment variables and keep
 
 For Docker, Docker Compose, or Coolify deployments, see the comprehensive [Docker Environment Variables Guide](DOCKER_ENVIRONMENT_VARIABLES.md) for all available configuration options.
 
+The project includes both `docker-compose.yml` (legacy format) and `docker-compose.yaml` (modern format) files. Use `docker-compose.yaml` for new deployments.
+
 You can also set the following environment variables to customize the image generation provider and API keys:
 
 - **IMAGE_PROVIDER=[pexels/pixabay/gemini_flash/dall-e-3]**: Select the image provider of your choice.
