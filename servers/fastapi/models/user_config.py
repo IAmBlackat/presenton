@@ -38,3 +38,6 @@ class UserConfig(BaseModel):
 
     # Web Search
     WEB_GROUNDING: Optional[bool] = None
+
+    # Template Generation
+    TEMPLATE_LLM_PROVIDER: Optional[str] = None  # "local" or "api" - defaults to "local" if using local LLM for content

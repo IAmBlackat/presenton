@@ -359,6 +359,63 @@ export default function LLMProviderSelection({
           </div>
         </div>
 
+        {/* Template Generation Configuration */}
+        <div className="mb-8 p-4 bg-amber-50 rounded-lg border border-amber-100">
+          <div className="flex items-start gap-3">
+            <Info className="w-5 h-5 text-amber-500 mt-0.5" />
+            <div className="flex-1">
+              <h3 className="text-sm font-medium text-amber-900 mb-2">
+                Template Generation Model
+              </h3>
+              <p className="text-sm text-amber-700 mb-3">
+                Choose which model to use for generating custom slide templates from uploaded files.
+              </p>
+              <div className="flex gap-4">
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="template_llm_provider"
+                    value="local"
+                    checked={llmConfig.TEMPLATE_LLM_PROVIDER === "local" || !llmConfig.TEMPLATE_LLM_PROVIDER}
+                    onChange={(e) => input_field_changed(e.target.value, "template_llm_provider")}
+                    className="w-4 h-4 text-blue-600"
+                  />
+                  <span className="text-sm text-amber-800">
+                    Use same model as content generation
+                    {llmConfig.LLM === "ollama" || llmConfig.LLM === "custom" ? " (Local)" : " (API)"}
+                    {llmConfig.LLM === "ollama" && llmConfig.OLLAMA_MODEL && (
+                      <span className="block text-xs text-amber-600 mt-1">
+                        Will use: {llmConfig.OLLAMA_MODEL}
+                      </span>
+                    )}
+                    {llmConfig.LLM === "custom" && llmConfig.CUSTOM_MODEL && (
+                      <span className="block text-xs text-amber-600 mt-1">
+                        Will use: {llmConfig.CUSTOM_MODEL}
+                      </span>
+                    )}
+                  </span>
+                </label>
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="template_llm_provider"
+                    value="api"
+                    checked={llmConfig.TEMPLATE_LLM_PROVIDER === "api"}
+                    onChange={(e) => input_field_changed(e.target.value, "template_llm_provider")}
+                    className="w-4 h-4 text-blue-600"
+                  />
+                  <span className="text-sm text-amber-800">
+                    Always use OpenAI GPT-5 (API)
+                  </span>
+                </label>
+              </div>
+              <p className="text-xs text-amber-600 mt-2">
+                Note: Template generation can take 5+ minutes per slide. Using local models may be slower but keeps data private.
+              </p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   );

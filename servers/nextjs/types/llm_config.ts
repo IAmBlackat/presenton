@@ -33,6 +33,9 @@ export interface LLMConfig {
   EXTENDED_REASONING?: boolean;
   WEB_GROUNDING?: boolean;
 
+  // Template Generation
+  TEMPLATE_LLM_PROVIDER?: string; // "local" or "api"
+
   // Only used in UI settings
   USE_CUSTOM_URL?: boolean;
 }

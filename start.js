@@ -103,6 +103,7 @@ const setupUserConfigFromEnv = () => {
       process.env.EXTENDED_REASONING || existingConfig.EXTENDED_REASONING,
     WEB_GROUNDING: process.env.WEB_GROUNDING || existingConfig.WEB_GROUNDING,
     USE_CUSTOM_URL: process.env.USE_CUSTOM_URL || existingConfig.USE_CUSTOM_URL,
+    TEMPLATE_LLM_PROVIDER: process.env.TEMPLATE_LLM_PROVIDER || existingConfig.TEMPLATE_LLM_PROVIDER,
   };
 
   writeFileSync(userConfigPath, JSON.stringify(userConfig));

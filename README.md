@@ -98,6 +98,9 @@ You may want to directly provide your API KEYS as environment variables and keep
 - **TOOL_CALLS=[Enable/Disable Tool Calls on Custom LLM]**: If **true**, **LLM** will use Tool Call instead of Json Schema for Structured Output.
 - **DISABLE_THINKING=[Enable/Disable Thinking on Custom LLM]**: If **true**, Thinking will be disabled.
 - **WEB_GROUNDING=[Enable/Disable Web Search for OpenAI, Google And Anthropic]**: If **true**, LLM will be able to search web for better results.
+- **TEMPLATE_LLM_PROVIDER=[local/api]**: Choose which model to use for template generation. If **local**, uses the same model as content generation (the exact model you have installed). If **api**, always uses OpenAI GPT-5. Defaults to **local** if using local models for content.
+
+> **Template Model Configuration customized by [FutureForge Studios Private Limited](https://ffstudios.io)**
 
 You can also set the following environment variables to customize the image generation provider and API keys:
 

@@ -23,6 +23,7 @@ from utils.get_env import (
     get_pixabay_api_key_env,
     get_extended_reasoning_env,
     get_web_grounding_env,
+    get_template_llm_provider_env,
 )
 from utils.parsers import parse_bool_or_none
 from utils.set_env import (
@@ -45,6 +46,7 @@ from utils.set_env import (
     set_pixabay_api_key_env,
     set_tool_calls_env,
     set_web_grounding_env,
+    set_template_llm_provider_env,
 )
 
 
@@ -98,6 +100,7 @@ def get_user_config():
             if existing_config.WEB_GROUNDING is not None
             else (parse_bool_or_none(get_web_grounding_env()) or False)
         ),
+        TEMPLATE_LLM_PROVIDER=existing_config.TEMPLATE_LLM_PROVIDER or get_template_llm_provider_env(),
     )
 
 
@@ -141,3 +144,5 @@ def update_env_with_user_config():
         set_extended_reasoning_env(str(user_config.EXTENDED_REASONING))
     if user_config.WEB_GROUNDING is not None:
         set_web_grounding_env(str(user_config.WEB_GROUNDING))
+    if user_config.TEMPLATE_LLM_PROVIDER:
+        set_template_llm_provider_env(user_config.TEMPLATE_LLM_PROVIDER)

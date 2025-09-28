@@ -95,3 +95,7 @@ def get_extended_reasoning_env():
 
 def get_web_grounding_env():
     return os.getenv("WEB_GROUNDING")
+
+
+def get_template_llm_provider_env():
+    return os.getenv("TEMPLATE_LLM_PROVIDER")

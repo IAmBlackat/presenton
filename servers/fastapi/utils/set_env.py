@@ -83,3 +83,7 @@ def set_extended_reasoning_env(value):
 
 def set_web_grounding_env(value):
     os.environ["WEB_GROUNDING"] = value
+
+
+def set_template_llm_provider_env(value):
+    os.environ["TEMPLATE_LLM_PROVIDER"] = value
