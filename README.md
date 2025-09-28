@@ -102,6 +102,10 @@ You may want to directly provide your API KEYS as environment variables and keep
 
 > **Template Model Configuration customized by [FutureForge Studios Private Limited](https://ffstudios.io)**
 
+## Docker Deployment
+
+For Docker, Docker Compose, or Coolify deployments, see the comprehensive [Docker Environment Variables Guide](DOCKER_ENVIRONMENT_VARIABLES.md) for all available configuration options.
+
 You can also set the following environment variables to customize the image generation provider and API keys:
 
 - **IMAGE_PROVIDER=[pexels/pixabay/gemini_flash/dall-e-3]**: Select the image provider of your choice.

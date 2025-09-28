@@ -1,0 +1,51 @@
+# Presento Environment Variables Example
+# Copy this file to .env and customize the values
+
+# Core Configuration
+CAN_CHANGE_KEYS=true
+DATABASE_URL=sqlite:///app_data/presenton.db
+
+# LLM Provider Configuration
+# Choose one: openai, google, anthropic, ollama, custom
+LLM=ollama
+
+# OpenAI Configuration (if LLM=openai)
+OPENAI_API_KEY=your_openai_api_key_here
+OPENAI_MODEL=gpt-4o
+
+# Google Configuration (if LLM=google)
+GOOGLE_API_KEY=your_google_api_key_here
+GOOGLE_MODEL=models/gemini-2.0-flash
+
+# Anthropic Configuration (if LLM=anthropic)
+ANTHROPIC_API_KEY=your_anthropic_api_key_here
+ANTHROPIC_MODEL=claude-3-5-sonnet-20241022
+
+# Ollama Configuration (if LLM=ollama)
+OLLAMA_URL=http://localhost:11434
+OLLAMA_MODEL=llama3.1
+
+# Custom LLM Configuration (if LLM=custom)
+CUSTOM_LLM_URL=https://your-custom-llm-api.com/v1
+CUSTOM_LLM_API_KEY=your_custom_api_key_here
+CUSTOM_MODEL=your-model-name
+
+# Template Generation Configuration
+# Choose: local (use same model as content) or api (use OpenAI GPT-5)
+TEMPLATE_LLM_PROVIDER=local
+
+# Image Generation Configuration
+IMAGE_PROVIDER=dall-e-3
+PEXELS_API_KEY=your_pexels_api_key_here
+PIXABAY_API_KEY=your_pixabay_api_key_here
+
+# Advanced LLM Configuration
+TOOL_CALLS=false
+DISABLE_THINKING=false
+EXTENDED_REASONING=false
+WEB_GROUNDING=false
+
+# Optional Configuration
+DISABLE_ANONYMOUS_TRACKING=false
+
+# Template Model Configuration customized by FutureForge Studios Private Limited (https://ffstudios.io)
