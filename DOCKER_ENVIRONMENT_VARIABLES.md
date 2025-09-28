@@ -71,7 +71,7 @@ This document lists all environment variables that can be configured for Present
 version: '3.8'
 
 services:
-  presenton:
+  production:
     build: .
     ports:
       - "5000:80"
@@ -96,9 +96,25 @@ services:
       # Advanced Options
       WEB_GROUNDING: false
       DISABLE_ANONYMOUS_TRACKING: true
+
+  development:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "5000:80"
+    volumes:
+      - .:/app
+      - ./app_data:/app_data
+    environment:
+      # Same environment variables as production
+      CAN_CHANGE_KEYS: false
+      LLM: ollama
+      OLLAMA_MODEL: llama3.1
+      TEMPLATE_LLM_PROVIDER: local
 ```
 
-> **Note**: The project includes both `docker-compose.yml` (legacy format) and `docker-compose.yaml` (modern format) files. Use `docker-compose.yaml` for new deployments.
+> **Note**: The project includes both `docker-compose.yml` (legacy format) and `docker-compose.yaml` (modern format) files. Use `docker-compose.yaml` for new deployments. GPU services have been removed for CPU-only deployments.
 
 ## Example Coolify Environment Variables
 
